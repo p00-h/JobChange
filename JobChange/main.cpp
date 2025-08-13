@@ -16,31 +16,32 @@
 #include "magician.h"
 #include "thief.h"
 #include "archer.h"
+
 using namespace std;
 
 // 메인 함수
 int main() {
-    string jobs[] = { "전사", "마법사", "도적", "궁수" };
-    int job_choice = 0;
-    string nickname;
+	string jobs[] = { "전사", "마법사", "도적", "궁수" };         // 직업 목록
+	int job_choice = 0;                                         // 직업 선택 변수
+	string nickname;                                            // 플레이어 닉네임 변수
 
-    Player* player = nullptr;
+	Player* player = nullptr;                                   // Player 타입의 포인터 선언
 
-    cout << "* 닉네임을 입력해주세요: ";
-    cin >> nickname;
+    cout << "* 닉네임을 입력해주세요: ";          
+	cin >> nickname;                                            // 플레이어 닉네임 입력
 
     cout << "<전직 시스템>" << endl;
     cout << nickname << "님, 환영합니다!" << endl;
     cout << "* 원하시는 직업을 선택해주세요." << endl;
 
-    for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) {                               // 직업 목록 출력
         cout << (i + 1) << ". " << jobs[i] << endl;
     }
 
-    cout << "선택: ";
+    cout << "번호 선택: ";
     cin >> job_choice;
 
-    switch (job_choice) {
+	switch (job_choice) {                                       // 직업 선택에 따른 객체 생성
     case 1:
         player = new Warrior(nickname);
         break;
@@ -58,9 +59,10 @@ int main() {
         return 1;
     }
 
-    player->attack();
-    player->printPlayerStatus();
+	player->attack();                                           // 공격 함수 호출
+	player->printPlayerStatus();                                // 플레이어 상태 출력
 
+	// 메모리 해제
     delete player;
 
     return 0;

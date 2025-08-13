@@ -6,10 +6,14 @@ using namespace std;
 
 class Player {
 public:
+	// 생성자
     Player(string nickname);
+	// 가상 소멸자
 	virtual ~Player() = default;
 
+	// 순수 가상 함수
     virtual void attack() = 0;
+	// 플레이어 상태 출력 함수
     void printPlayerStatus();
 
     // getter 함수

@@ -1,5 +1,8 @@
 ﻿  Archer.cpp
+  Magician.cpp
   main.cpp
+  Player.cpp
   Thief.cpp
+  Warrior.cpp
   코드를 생성하고 있습니다...
   JobChange.vcxproj -> E:\git\JobChange\JobChange\x64\Debug\JobChange.exe
