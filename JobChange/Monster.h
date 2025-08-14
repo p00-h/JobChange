@@ -1,37 +1,43 @@
-#pragma once
+ï»¿#pragma once
 #include "Player.h"
 
 class Monster {
 public:
-    // Monster »ý¼ºÀÚ
-    // - ¸ó½ºÅÍÀÇ ÀÌ¸§À» ¸Å°³º¯¼ö·Î ÀÔ·Â ¹Þ½À´Ï´Ù.
-    // - ¸ðµç ¸ó½ºÅÍ´Â HP 10, °ø°Ý·Â 30, ¹æ¾î·Â 10, ½ºÇÇµå 10ÀÇ ´É·ÂÄ¡¸¦ °¡Áý´Ï´Ù.
+    // Monster ìƒì„±ìž
+    // - ëª¬ìŠ¤í„°ì˜ ì´ë¦„ì„ ë§¤ê°œë³€ìˆ˜ë¡œ ìž…ë ¥ ë°›ìŠµë‹ˆë‹¤.
+    // - ëª¨ë“  ëª¬ìŠ¤í„°ëŠ” HP 10, ê³µê²©ë ¥ 30, ë°©ì–´ë ¥ 10, ìŠ¤í”¼ë“œ 10ì˜ ëŠ¥ë ¥ì¹˜ë¥¼ ê°€ì§‘ë‹ˆë‹¤.
     Monster(string name);
-	virtual ~Monster() = default; // °¡»ó ¼Ò¸êÀÚ
+	virtual ~Monster() = default; // ê°€ìƒ ì†Œë©¸ìž
 
-    // ¸ó½ºÅÍÀÇ °ø°Ý ÇÔ¼ö
-    // - ÇÃ·¹ÀÌ¾î °´Ã¼ÀÇ Æ÷ÀÎÅÍ¸¦ ¸Å°³º¯¼ö·Î ÀÔ·Â ¹Þ½À´Ï´Ù.
-    // - ¸ó½ºÅÍÀÇ °ø°Ý·Â-ÇÃ·¹ÀÌ¾îÀÇ ¹æ¾î·ÂÀ» µ¥¹ÌÁö·Î Á¤ÀÇÇÕ´Ï´Ù.
-    // - ¸¸¾à À§¿¡¼­ °è»êÇÑ µ¥¹ÌÁö°¡ 0 ÀÌÇÏ¶ó¸é, µ¥¹ÌÁö¸¦ 1·Î Á¤ÀÇÇÕ´Ï´Ù.
-    // - ÇÃ·¹ÀÌ¾î¿¡°Ô ¾ó¸¶³ª µ¥¹ÌÁö¸¦ ÀÔÇû´ÂÁö Ãâ·ÂÇÕ´Ï´Ù.
-    // - setHP ÇÔ¼ö¸¦ ½ÇÇàÇÏ¿© HP-µ¥¹ÌÁö °è»ê °á°ú¸¦ ¸Å°³º¯¼ö·Î Àü´ÞÇÕ´Ï´Ù.
-    // - setHP¿¡¼­ ¸®ÅÏ ¹ÞÀº »ýÁ¸ ¿©ºÎ¸¦ ±âÁØÀ¸·Î ºÐ±â¹®ÀÌ ½ÇÇàµË´Ï´Ù.
-    // - »ýÁ¸ÇßÀ» °æ¿ì, ÇÃ·¹ÀÌ¾îÀÇ ³²Àº HP¸¸ Ãâ·ÂÇÕ´Ï´Ù.
-    // - »ýÁ¸ÇÏÁö ¸øÇßÀ» °æ¿ì, ÇÃ·¹ÀÌ¾îÀÇ ³²Àº HP¿Í ¸ó½ºÅÍÀÇ ½Â¸® ¹®±¸¸¦ Ãâ·ÂÇÕ´Ï´Ù.
-    void attack(Player* player); 
+    // ëª¬ìŠ¤í„°ì˜ ê³µê²© í•¨ìˆ˜
+    // - í”Œë ˆì´ì–´ ê°ì²´ì˜ í¬ì¸í„°ë¥¼ ë§¤ê°œë³€ìˆ˜ë¡œ ìž…ë ¥ ë°›ìŠµë‹ˆë‹¤.
+    // - ëª¬ìŠ¤í„°ì˜ ê³µê²©ë ¥-í”Œë ˆì´ì–´ì˜ ë°©ì–´ë ¥ì„ ë°ë¯¸ì§€ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
+    // - ë§Œì•½ ìœ„ì—ì„œ ê³„ì‚°í•œ ë°ë¯¸ì§€ê°€ 0 ì´í•˜ë¼ë©´, ë°ë¯¸ì§€ë¥¼ 1ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
+    // - í”Œë ˆì´ì–´ì—ê²Œ ì–¼ë§ˆë‚˜ ë°ë¯¸ì§€ë¥¼ ìž…í˜”ëŠ”ì§€ ì¶œë ¥í•©ë‹ˆë‹¤.
+    // - setHP í•¨ìˆ˜ë¥¼ ì‹¤í–‰í•˜ì—¬ HP-ë°ë¯¸ì§€ ê³„ì‚° ê²°ê³¼ë¥¼ ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬í•©ë‹ˆë‹¤.
+    // - setHPì—ì„œ ë¦¬í„´ ë°›ì€ ìƒì¡´ ì—¬ë¶€ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë¶„ê¸°ë¬¸ì´ ì‹¤í–‰ë©ë‹ˆë‹¤.
+    // - ìƒì¡´í–ˆì„ ê²½ìš°, í”Œë ˆì´ì–´ì˜ ë‚¨ì€ HPë§Œ ì¶œë ¥í•©ë‹ˆë‹¤.
+    // - ìƒì¡´í•˜ì§€ ëª»í–ˆì„ ê²½ìš°, í”Œë ˆì´ì–´ì˜ ë‚¨ì€ HPì™€ ëª¬ìŠ¤í„°ì˜ ìŠ¹ë¦¬ ë¬¸êµ¬ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+    
+	// ëª¬ìŠ¤í„°ì˜ ê³µê²© í•¨ìˆ˜ëŠ” Player í´ëž˜ìŠ¤ì˜ attack í•¨ìˆ˜ë¥¼ ì˜¤ë²„ë¼ì´ë”©í•©ë‹ˆë‹¤.
+	// Player í´ëž˜ìŠ¤ì˜ attack í•¨ìˆ˜ëŠ” ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜ì´ë¯€ë¡œ, ëª¬ìŠ¤í„° í´ëž˜ìŠ¤ì—ì„œ êµ¬í˜„í•´ì•¼ í•©ë‹ˆë‹¤.
+	// ì°¸ì¡°í˜•ìœ¼ë¡œ Player ê°ì²´ë¥¼ ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ìŠµë‹ˆë‹¤.
+    void attack(Player& p);
 
-    // ¸ó½ºÅÍÀÇ ¼Ó¼º°ªÀ» ¸®ÅÏÇÏ´Â get ÇÔ¼ö
+	//void attack(Player* p);
+
+    // ëª¬ìŠ¤í„°ì˜ ì†ì„±ê°’ì„ ë¦¬í„´í•˜ëŠ” get í•¨ìˆ˜
     string getName();
     int getHP();
     int getPower();
     int getDefence();
     int getSpeed();
 
-    // ¸ó½ºÅÍÀÇ ¼Ó¼º°ªÀ» Á¤ÀÇÇÏ´Â set ÇÔ¼ö
-    // setHPÀÇ °æ¿ì ¹èÆ² ½Ã½ºÅÛ¿¡ Á÷°áµÇ´Â ÇÔ¼öÀÌ¹Ç·Î, »ýÁ¸ ¿©ºÎ¸¦ ¸®ÅÏÇÕ´Ï´Ù.
-    // HP°¡ 1 ÀÌ»óÀÏ ¶§ true, HP°¡ 0 ÀÌÇÏ°¡ µÇ¾úÀ» ¶§ false¸¦ ¸®ÅÏÇÕ´Ï´Ù.
-    // HP°¡ 1 ÀÌ»óÀÏ ¶§¸¸ »õ·Î¿î HP°ª Á¤ÀÇ¸¦ ÁøÇàÇÕ´Ï´Ù.
-    // 0 ÀÌÇÏÀÏ °æ¿ì HP¸¦ 0À¸·Î Á¤ÀÇÇÕ´Ï´Ù.
+    // ëª¬ìŠ¤í„°ì˜ ì†ì„±ê°’ì„ ì •ì˜í•˜ëŠ” set í•¨ìˆ˜
+    // setHPì˜ ê²½ìš° ë°°í‹€ ì‹œìŠ¤í…œì— ì§ê²°ë˜ëŠ” í•¨ìˆ˜ì´ë¯€ë¡œ, ìƒì¡´ ì—¬ë¶€ë¥¼ ë¦¬í„´í•©ë‹ˆë‹¤.
+    // HPê°€ 1 ì´ìƒì¼ ë•Œ true, HPê°€ 0 ì´í•˜ê°€ ë˜ì—ˆì„ ë•Œ falseë¥¼ ë¦¬í„´í•©ë‹ˆë‹¤.
+    // HPê°€ 1 ì´ìƒì¼ ë•Œë§Œ ìƒˆë¡œìš´ HPê°’ ì •ì˜ë¥¼ ì§„í–‰í•©ë‹ˆë‹¤.
+    // 0 ì´í•˜ì¼ ê²½ìš° HPë¥¼ 0ìœ¼ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
     void setName(string name);
     bool setHP(int HP);
     void setPower(int power);
@@ -39,9 +45,9 @@ public:
     void setSpeed(int speed);
 
 protected:
-    string name; // ¸ó½ºÅÍÀÇ ÀÌ¸§
-    int HP; // ¸ó½ºÅÍÀÇ HP
-    int power; // ¸ó½ºÅÍÀÇ °ø°Ý·Â
-    int defence; // ¸ó½ºÅÍÀÇ ¹æ¾î·Â
-    int speed; // ¸ó½ºÅÍÀÇ ½ºÇÇµå
+    string name; // ëª¬ìŠ¤í„°ì˜ ì´ë¦„
+    int HP; // ëª¬ìŠ¤í„°ì˜ HP
+    int power; // ëª¬ìŠ¤í„°ì˜ ê³µê²©ë ¥
+    int defence; // ëª¬ìŠ¤í„°ì˜ ë°©ì–´ë ¥
+    int speed; // ëª¬ìŠ¤í„°ì˜ ìŠ¤í”¼ë“œ
 };

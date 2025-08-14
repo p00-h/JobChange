@@ -1,9 +1,9 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "Warrior.h"
 #include "Monster.h"
 
 Warrior::Warrior(string nickname) : Player(nickname) {
-	job_name = "Àü»ç";
+	job_name = "ì „ì‚¬";
 	level = 1;
 	HP = 120;
 	MP = 50;
@@ -14,30 +14,56 @@ Warrior::Warrior(string nickname) : Player(nickname) {
 }
 
 //void Warrior::attack() {
-//	std::cout << "["<< job_name << "] " << nickname << "ÀÌ(°¡) ´ë°ËÀ» ÈÖµÑ·¯ ÇÇÇØ¸¦ Áİ´Ï´Ù!" << std::endl;
+//	std::cout << "["<< job_name << "] " << nickname << "ì´(ê°€) ëŒ€ê²€ì„ íœ˜ë‘˜ëŸ¬ í”¼í•´ë¥¼ ì¤ë‹ˆë‹¤!" << std::endl;
 //}
 
-void Warrior::attack(Monster* monster) {
-	// ÇÃ·¹ÀÌ¾îÀÇ °ø°İ·Â-¸ó½ºÅÍÀÇ ¹æ¾î·ÂÀ» °è»êÇÏ¿© µ¥¹ÌÁö·Î Á¤ÀÇÇÕ´Ï´Ù.
-	// °è»êµÈ µ¥¹ÌÁö°¡ 0 ÀÌÇÏÀÏ °æ¿ì, µ¥¹ÌÁö¸¦ 1·Î Á¤ÀÇÇÕ´Ï´Ù.
-	// °ø°İ ¹®ÀåÀ» Ãâ·ÂÇÕ´Ï´Ù.
-	// - Àü»ç: °è»êµÈ µ¥¹ÌÁö·Î 1È¸ °ø°İ
-	// setHP¸¦ È£ÃâÇÏ¿© ¸ó½ºÅÍÀÇ HP-µ¥¹ÌÁö¸¦ °è»êÇÑ °ªÀ» ¸Å°³º¯¼ö·Î Àü´ŞÇÕ´Ï´Ù.
-	// ¸®ÅÏµÈ »ıÁ¸ ¿©ºÎ¸¦ ±âÁØÀ¸·Î ºĞ±â¹®ÀÌ ½ÇÇàµË´Ï´Ù.
-	// »ıÁ¸ÇßÀ» °æ¿ì ¸ó½ºÅÍÀÇ ³²Àº HP Ãâ·Â
-	// »ıÁ¸ÇÏÁö ¸øÇßÀ» °æ¿ì ¸ó½ºÅÍÀÇ ³²Àº HP¿Í ÇÃ·¹ÀÌ¾îÀÇ ½Â¸® ¹®±¸ Ãâ·Â
-	int damage = power - monster->getDefence();
-	if (damage <= 0) {
-		damage = 1; // µ¥¹ÌÁö°¡ 0 ÀÌÇÏÀÏ °æ¿ì 1·Î Á¤ÀÇ
-	}
-	std::cout << "[" << job_name << "] " << nickname << "ÀÌ(°¡) ´ë°ËÀ» ÈÖµÑ·¯ " << damage << "ÀÇ ÇÇÇØ¸¦ Áİ´Ï´Ù!" << std::endl;
+//void Warrior::attack(Monster* monster) {
+//	// í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥-ëª¬ìŠ¤í„°ì˜ ë°©ì–´ë ¥ì„ ê³„ì‚°í•˜ì—¬ ë°ë¯¸ì§€ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
+//	// ê³„ì‚°ëœ ë°ë¯¸ì§€ê°€ 0 ì´í•˜ì¼ ê²½ìš°, ë°ë¯¸ì§€ë¥¼ 1ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
+//	// ê³µê²© ë¬¸ì¥ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+//	// - ì „ì‚¬: ê³„ì‚°ëœ ë°ë¯¸ì§€ë¡œ 1íšŒ ê³µê²©
+//	// setHPë¥¼ í˜¸ì¶œí•˜ì—¬ ëª¬ìŠ¤í„°ì˜ HP-ë°ë¯¸ì§€ë¥¼ ê³„ì‚°í•œ ê°’ì„ ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬í•©ë‹ˆë‹¤.
+//	// ë¦¬í„´ëœ ìƒì¡´ ì—¬ë¶€ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë¶„ê¸°ë¬¸ì´ ì‹¤í–‰ë©ë‹ˆë‹¤.
+//	// ìƒì¡´í–ˆì„ ê²½ìš° ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP ì¶œë ¥
+//	// ìƒì¡´í•˜ì§€ ëª»í–ˆì„ ê²½ìš° ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HPì™€ í”Œë ˆì´ì–´ì˜ ìŠ¹ë¦¬ ë¬¸êµ¬ ì¶œë ¥
+//	int damage = power - monster->getDefence();
+//	if (damage <= 0) {
+//		damage = 1; // ë°ë¯¸ì§€ê°€ 0 ì´í•˜ì¼ ê²½ìš° 1ë¡œ ì •ì˜
+//	}
+//	std::cout << "[" << job_name << "] " << nickname << "ì´(ê°€) ëŒ€ê²€ì„ íœ˜ë‘˜ëŸ¬ " << damage << "ì˜ í”¼í•´ë¥¼ ì¤ë‹ˆë‹¤!" << std::endl;
+//
+//	bool isAlive = monster->setHP(monster->getHP() - damage);
+//
+//	if (isAlive) {
+//		std::cout << monster->getName() << "ì˜ ë‚¨ì€ HP: " << monster->getHP() << std::endl;
+//	} else {
+//		std::cout << monster->getName() << "ì˜ ë‚¨ì€ HP: " << monster->getHP() << ", " << std::endl;
+//		std::cout << "[" << job_name << "] " << nickname << "ì´(ê°€) ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤!" << std::endl;
+//	}
+//}
 
-	bool isAlive = monster->setHP(monster->getHP() - damage);
+void Warrior::attack(Monster& monster) {
+	// í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥-ëª¬ìŠ¤í„°ì˜ ë°©ì–´ë ¥ì„ ê³„ì‚°í•˜ì—¬ ë°ë¯¸ì§€ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
+	// ê³„ì‚°ëœ ë°ë¯¸ì§€ê°€ 0 ì´í•˜ì¼ ê²½ìš°, ë°ë¯¸ì§€ë¥¼ 1ë¡œ ì •ì˜í•©ë‹ˆë‹¤.
+	// ê³µê²© ë¬¸ì¥ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+	// - ì „ì‚¬: ê³„ì‚°ëœ ë°ë¯¸ì§€ë¡œ 1íšŒ ê³µê²©
+	// setHPë¥¼ í˜¸ì¶œí•˜ì—¬ ëª¬ìŠ¤í„°ì˜ HP-ë°ë¯¸ì§€ë¥¼ ê³„ì‚°í•œ ê°’ì„ ë§¤ê°œë³€ìˆ˜ë¡œ ì „ë‹¬í•©ë‹ˆë‹¤.
+	// ë¦¬í„´ëœ ìƒì¡´ ì—¬ë¶€ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ë¶„ê¸°ë¬¸ì´ ì‹¤í–‰ë©ë‹ˆë‹¤.
+	// ìƒì¡´í–ˆì„ ê²½ìš° ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HP ì¶œë ¥
+	// ìƒì¡´í•˜ì§€ ëª»í–ˆì„ ê²½ìš° ëª¬ìŠ¤í„°ì˜ ë‚¨ì€ HPì™€ í”Œë ˆì´ì–´ì˜ ìŠ¹ë¦¬ ë¬¸êµ¬ ì¶œë ¥
+	int damage = power - monster.getDefence();
+	if (damage <= 0) {
+		damage = 1; // ë°ë¯¸ì§€ê°€ 0 ì´í•˜ì¼ ê²½ìš° 1ë¡œ ì •ì˜
+	}
+	std::cout << "[" << job_name << "] " << nickname << "ì´(ê°€) ëŒ€ê²€ì„ íœ˜ë‘˜ëŸ¬ " << damage << "ì˜ í”¼í•´ë¥¼ ì¤ë‹ˆë‹¤!" << std::endl;
+
+	bool isAlive = monster.setHP(monster.getHP() - damage);
 
 	if (isAlive) {
-		std::cout << monster->getName() << "ÀÇ ³²Àº HP: " << monster->getHP() << std::endl;
-	} else {
-		std::cout << monster->getName() << "ÀÇ ³²Àº HP: " << monster->getHP() << ", " << std::endl;
-		std::cout << "[" << job_name << "] " << nickname << "ÀÌ(°¡) ½Â¸®Çß½À´Ï´Ù!" << std::endl;
+		std::cout << monster.getName() << "ì˜ ë‚¨ì€ HP: " << monster.getHP() << std::endl;
+	}
+	else {
+		std::cout << monster.getName() << "ì˜ ë‚¨ì€ HP: " << monster.getHP() << ", " << std::endl;
+		std::cout << "[" << job_name << "] " << nickname << "ì´(ê°€) ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤!" << std::endl;
 	}
 }

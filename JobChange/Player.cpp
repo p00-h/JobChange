@@ -1,6 +1,6 @@
-#include "Player.h"
+ï»¿#include "Player.h"
 
-// Player Å¬·¡½º »ı¼ºÀÚ
+// Player í´ë˜ìŠ¤ ìƒì„±ì
 Player::Player(string nickname) : nickname(nickname), 
 	level(1), 
 	HP(100), 
@@ -13,20 +13,20 @@ Player::Player(string nickname) : nickname(nickname),
 
 void Player::printPlayerStatus() {
     cout << "------------------------------------" << endl;
-    cout << "* ÇöÀç ´É·ÂÄ¡" << endl;
-    cout << "´Ğ³×ÀÓ: " << nickname << endl;
-    cout << "Á÷¾÷: " << job_name << endl;
+    cout << "* í˜„ì¬ ëŠ¥ë ¥ì¹˜" << endl;
+    cout << "ë‹‰ë„¤ì„: " << nickname << endl;
+    cout << "ì§ì—…: " << job_name << endl;
     cout << "Lv. " << level << endl;
     cout << "HP: " << HP << endl;
     cout << "MP: " << MP << endl;
-    cout << "°ø°İ·Â: " << power << endl;
-    cout << "¹æ¾î·Â: " << defence << endl;
-    cout << "Á¤È®µµ: " << accuracy << endl;
-    cout << "¼Óµµ: " << speed << endl;
+    cout << "ê³µê²©ë ¥: " << power << endl;
+    cout << "ë°©ì–´ë ¥: " << defence << endl;
+    cout << "ì •í™•ë„: " << accuracy << endl;
+    cout << "ì†ë„: " << speed << endl;
     cout << "------------------------------------" << endl;
 }
 
-// getter ÇÔ¼öµé
+// getter í•¨ìˆ˜ë“¤
 string Player::getJobName() {    return job_name;}
 string Player::getNickname() {    return nickname;}
 int Player::getLevel() {    return level;}
@@ -37,11 +37,11 @@ int Player::getDefence() {    return defence;}
 int Player::getAccuracy() {    return accuracy;}
 int Player::getSpeed() {    return speed;}
 
-// setter ÇÔ¼öµé
+// setter í•¨ìˆ˜ë“¤
 void Player::setNickname(string nickname) {    this->nickname = nickname;}
 bool Player::setHP(int HP) {
     if (HP <= 0) {
-		this->HP = 0; // HP°¡ 0 ÀÌÇÏÀÏ °æ¿ì 0À¸·Î ¼³Á¤
+		this->HP = 0; // HPê°€ 0 ì´í•˜ì¼ ê²½ìš° 0ìœ¼ë¡œ ì„¤ì •
         return false;
     }
     this->HP = HP;
@@ -49,7 +49,7 @@ bool Player::setHP(int HP) {
 }    
 bool Player::setMP(int MP) {
     if (MP <= 0) {
-		this->MP = 0; // MP°¡ 0 ÀÌÇÏÀÏ °æ¿ì 0À¸·Î ¼³Á¤
+		this->MP = 0; // MPê°€ 0 ì´í•˜ì¼ ê²½ìš° 0ìœ¼ë¡œ ì„¤ì •
 		return false;
     }
 	this->MP = MP;

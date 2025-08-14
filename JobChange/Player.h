@@ -1,27 +1,28 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-class Monster; // Àü¹æ ¼±¾ğ
+class Monster; // ì „ë°© ì„ ì–¸
 
-// Player Å¬·¡½º Á¤ÀÇ
+// Player í´ë˜ìŠ¤ ì •ì˜
 class Player {
 public:
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
     Player(string nickname);
-	// °¡»ó ¼Ò¸êÀÚ
+	// ê°€ìƒ ì†Œë©¸ì
 	virtual ~Player() = default;
 
-	// ¼ø¼ö °¡»ó ÇÔ¼ö
+	// ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜
     //virtual void attack() = 0;
-	// ¸ó½ºÅÍ¸¦ °ø°İÇÏ´Â ÇÔ¼ö
-	virtual void attack(Monster* monster) = 0;
-	// ÇÃ·¹ÀÌ¾î »óÅÂ Ãâ·Â ÇÔ¼ö
+	// ëª¬ìŠ¤í„°ë¥¼ ê³µê²©í•˜ëŠ” í•¨ìˆ˜
+	virtual void attack(Monster& m) = 0;
+	//virtual void attack() = 0;
+	// í”Œë ˆì´ì–´ ìƒíƒœ ì¶œë ¥ í•¨ìˆ˜
     void printPlayerStatus();
 
-    // getter ÇÔ¼ö
+    // getter í•¨ìˆ˜
     string getJobName();
     string getNickname();
     int getLevel();
@@ -32,7 +33,7 @@ public:
     int getAccuracy();
     int getSpeed();
 
-    // setter ÇÔ¼ö
+    // setter í•¨ìˆ˜
     void setNickname(string nickname);
     bool setHP(int HP);
     bool setMP(int MP);

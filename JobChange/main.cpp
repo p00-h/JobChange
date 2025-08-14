@@ -1,13 +1,13 @@
-/*
-- Player¶ó´Â ±âº» Å¬·¡½º¸¦ Á¤ÀÇ ÇÕ´Ï´Ù.
-- Player Å¬·¡½º¿¡´Â `attack()`ÀÌ¶ó´Â ¼ø¼ö °¡»ó ÇÔ¼ö¸¦ Æ÷ÇÔÇÕ´Ï´Ù.
-- `attack()` ÇÔ¼ö´Â ¹«±â¸¦ ÈÖµÎ¸£±â¸¸ ÇÏ´Â ±âº»ÀûÀÎ °ø°Ý ÇÔ¼öÀÔ´Ï´Ù.
-- Player Å¬·¡½º¸¦ »ó¼Ó¹Þ¾Æ ´Ù¾çÇÑ Á÷¾÷ Å¬·¡½º¸¦ »ý¼ºÇÕ´Ï´Ù.
-- ¿¹) Warrior, Magician, Thief, Archer
-- °¢ Á÷¾÷ Å¬·¡½º¿¡¼­ `attack()`ÇÔ¼ö¸¦ **ÀçÁ¤ÀÇ**(¿À¹ö¶óÀÌµù)ÇÏ¿© ÇØ´ç Á÷¾÷ÀÇ °ø°ÝÀ» Ãâ·ÂÇÏ¸é µË´Ï´Ù!
-- ¸ÞÀÎ ÇÔ¼ö¿¡¼­ Player Å¸ÀÔÀÇ Æ÷ÀÎÅÍ ¹è¿­À» ¼±¾ðÇÏ°í, ÇØ´çÇÏ´Â ¹øÈ£¸¦ ÀÔ·ÂÇÏ¸é (1. Àü»ç 2. ¸¶¹ý»ç 3. µµÀû 4. ±Ã¼ö)  
-    Warrior, Magician, Thief, Archer¸¦ °¢°¢ ¹è¿­ÀÇ ¿ø¼Ò·Î ¼±¾ðÇÕ´Ï´Ù.
-    ¡æ ÀÌÈÄ Player´Â `attack()` ÇÔ¼ö¸¦ È£ÃâÇÏ¿© °ø°ÝÇÕ´Ï´Ù.
+ï»¿/*
+- Playerë¼ëŠ” ê¸°ë³¸ í´ëž˜ìŠ¤ë¥¼ ì •ì˜ í•©ë‹ˆë‹¤.
+- Player í´ëž˜ìŠ¤ì—ëŠ” `attack()`ì´ë¼ëŠ” ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜ë¥¼ í¬í•¨í•©ë‹ˆë‹¤.
+- `attack()` í•¨ìˆ˜ëŠ” ë¬´ê¸°ë¥¼ íœ˜ë‘ë¥´ê¸°ë§Œ í•˜ëŠ” ê¸°ë³¸ì ì¸ ê³µê²© í•¨ìˆ˜ìž…ë‹ˆë‹¤.
+- Player í´ëž˜ìŠ¤ë¥¼ ìƒì†ë°›ì•„ ë‹¤ì–‘í•œ ì§ì—… í´ëž˜ìŠ¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
+- ì˜ˆ) Warrior, Magician, Thief, Archer
+- ê° ì§ì—… í´ëž˜ìŠ¤ì—ì„œ `attack()`í•¨ìˆ˜ë¥¼ **ìž¬ì •ì˜**(ì˜¤ë²„ë¼ì´ë”©)í•˜ì—¬ í•´ë‹¹ ì§ì—…ì˜ ê³µê²©ì„ ì¶œë ¥í•˜ë©´ ë©ë‹ˆë‹¤!
+- ë©”ì¸ í•¨ìˆ˜ì—ì„œ Player íƒ€ìž…ì˜ í¬ì¸í„° ë°°ì—´ì„ ì„ ì–¸í•˜ê³ , í•´ë‹¹í•˜ëŠ” ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ë©´ (1. ì „ì‚¬ 2. ë§ˆë²•ì‚¬ 3. ë„ì  4. ê¶ìˆ˜)  
+    Warrior, Magician, Thief, Archerë¥¼ ê°ê° ë°°ì—´ì˜ ì›ì†Œë¡œ ì„ ì–¸í•©ë‹ˆë‹¤.
+    â†’ ì´í›„ PlayerëŠ” `attack()` í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ì—¬ ê³µê²©í•©ë‹ˆë‹¤.
 */
 
 #include <iostream>
@@ -22,74 +22,72 @@
 
 using namespace std;
 
-// ¸ÞÀÎ ÇÔ¼ö
+// ë©”ì¸ í•¨ìˆ˜
 int main() {
-    vector<string> monsters = {"½½¶óÀÓ","¿ÀÅ©","µå·¡°ï"};
-	vector<string> jobs = { "Àü»ç", "¸¶¹ý»ç", "µµÀû", "±Ã¼ö" };         // Á÷¾÷ ¸ñ·Ï
-	int job_choice = 0;                                         // Á÷¾÷ ¼±ÅÃ º¯¼ö
-	string nickname;                                            // ÇÃ·¹ÀÌ¾î ´Ð³×ÀÓ º¯¼ö
+    vector<string> monsters = {"ìŠ¬ë¼ìž„","ì˜¤í¬","ë“œëž˜ê³¤"};
+	vector<string> jobs = { "ì „ì‚¬", "ë§ˆë²•ì‚¬", "ë„ì ", "ê¶ìˆ˜" };         // ì§ì—… ëª©ë¡
+	int job_choice = 0;                                         // ì§ì—… ì„ íƒ ë³€ìˆ˜
+	string nickname;                                            // í”Œë ˆì´ì–´ ë‹‰ë„¤ìž„ ë³€ìˆ˜
 
-	Player* player = nullptr;                                   // Player Å¸ÀÔÀÇ Æ÷ÀÎÅÍ ¼±¾ð
+	//Player* player = nullptr;                                   // Player íƒ€ìž…ì˜ í¬ì¸í„° ì„ ì–¸
 
-    cout << "* ´Ð³×ÀÓÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä: ";          
-	cin >> nickname;                                            // ÇÃ·¹ÀÌ¾î ´Ð³×ÀÓ ÀÔ·Â
+    cout << "* ë‹‰ë„¤ìž„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”: ";          
+	cin >> nickname;                                            // í”Œë ˆì´ì–´ ë‹‰ë„¤ìž„ ìž…ë ¥
 
-    cout << "<ÀüÁ÷ ½Ã½ºÅÛ>" << endl;
-    cout << nickname << "´Ô, È¯¿µÇÕ´Ï´Ù!" << endl;
-    cout << "* ¿øÇÏ½Ã´Â Á÷¾÷À» ¼±ÅÃÇØÁÖ¼¼¿ä." << endl;
+    cout << "<ì „ì§ ì‹œìŠ¤í…œ>" << endl;
+    cout << nickname << "ë‹˜, í™˜ì˜í•©ë‹ˆë‹¤!" << endl;
+    cout << "* ì›í•˜ì‹œëŠ” ì§ì—…ì„ ì„ íƒí•´ì£¼ì„¸ìš”." << endl;
 
-	for (size_t i = 0; i < jobs.size(); i++) {                               // Á÷¾÷ ¸ñ·Ï Ãâ·Â
+	for (size_t i = 0; i < jobs.size(); i++) {                               // ì§ì—… ëª©ë¡ ì¶œë ¥
         cout << (i + 1) << ". " << jobs[i] << endl;
     }
 
-    cout << "¹øÈ£ ¼±ÅÃ: ";
+    cout << "ë²ˆí˜¸ ì„ íƒ: ";
     cin >> job_choice;
 
-	switch (job_choice) {                                       // Á÷¾÷ ¼±ÅÃ¿¡ µû¸¥ °´Ã¼ »ý¼º
+    unique_ptr<Player> player;
+	switch (job_choice) {                                       // ì§ì—… ì„ íƒì— ë”°ë¥¸ ê°ì²´ ìƒì„±
     case 1:
-        player = new Warrior(nickname);
+        player = make_unique<Warrior>(nickname);
         break;
     case 2:
-        player = new Magician(nickname);
+        player = make_unique<Magician>(nickname);
         break;
     case 3:
-        player = new Thief(nickname);
+        player = make_unique<Thief>(nickname);
         break;
     case 4:
-        player = new Archer(nickname);
+        player = make_unique<Archer>(nickname);
         break;
     default:
-        cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù." << endl;
+        cout << "ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤." << endl;
         return 1;
     }
-    player->printPlayerStatus();                                // ÇÃ·¹ÀÌ¾î »óÅÂ Ãâ·Â
+    player->printPlayerStatus();                                // í”Œë ˆì´ì–´ ìƒíƒœ ì¶œë ¥
     
-    //monster->attack(player);                                    // ¸ó½ºÅÍ °ø°Ý ÇÔ¼ö È£Ãâ
-    //player->attack(monster);                                    // °ø°Ý ÇÔ¼ö È£Ãâ
+    //monster->attack(player);                                    // ëª¬ìŠ¤í„° ê³µê²© í•¨ìˆ˜ í˜¸ì¶œ
+    //player->attack(monster);                                    // ê³µê²© í•¨ìˆ˜ í˜¸ì¶œ
     
 
     for (size_t i = 0; i < monsters.size() && player->getHP() > 0; i++) {
 
-        auto monster = make_unique<Monster>(monsters[i]);                    // ¸ó½ºÅÍ °´Ã¼ »ý¼º
-        cout  << monster->getName() << " ¸ó½ºÅÍ°¡ ³ªÅ¸³µ½À´Ï´Ù! "<< endl;
+        auto monster = make_unique<Monster>(monsters[i]);                    // ëª¬ìŠ¤í„° ê°ì²´ ìƒì„±
+        cout  << monster->getName() << " ëª¬ìŠ¤í„°ê°€ ë‚˜íƒ€ë‚¬ìŠµë‹ˆë‹¤! "<< endl;
 
-        // ¸ó½ºÅÍ¿Í ÇÃ·¹ÀÌ¾î µÑÁß ÇÏ³ª°¡ Á×À» ¶§±îÁö °ø°ÝÀ» ¹Ýº¹ÇÕ´Ï´Ù.
+        // ëª¬ìŠ¤í„°ì™€ í”Œë ˆì´ì–´ ë‘˜ì¤‘ í•˜ë‚˜ê°€ ì£½ì„ ë•Œê¹Œì§€ ê³µê²©ì„ ë°˜ë³µí•©ë‹ˆë‹¤.
         for(; player->getHP() > 0 && monster->getHP() > 0;) {
-		// ¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î¸¦ °ø°Ý
-        monster->attack(player);
-		// ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍ¸¦ °ø°Ý
+		// ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ë¥¼ ê³µê²©
+        monster->attack(*player);
+		// í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„°ë¥¼ ê³µê²©
             if (player->getHP() > 0) {
-                player->attack(monster.get());
+                player->attack(*monster);
             }
         }
 
-        // ÃÖÁ¾ ÇÃ·¹ÀÌ¾î »óÅÂ Ãâ·Â
+        // ìµœì¢… í”Œë ˆì´ì–´ ìƒíƒœ ì¶œë ¥
 	    player->printPlayerStatus();
 
     }
-
-    delete player;
-    player = nullptr;
 
     return 0;
 }
@@ -98,19 +96,19 @@ int main() {
 
 
 /***********************************************************************************************************************
-* ÇÁ·Î±×·¥ ¼³¸í:
-* ÀÌ ÇÁ·Î±×·¥Àº ´Ù¾çÇÑ Á÷¾÷À» °¡Áø ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍ¿Í ÀüÅõ¸¦ ¹úÀÌ´Â °ÔÀÓÀÔ´Ï´Ù.
-* °¢ Á÷¾÷Àº Player Å¬·¡½º¸¦ »ó¼Ó¹Þ¾Æ °íÀ¯ÀÇ °ø°Ý ¹æ½ÄÀ» ±¸ÇöÇÏ¸ç,
-* ¸ó½ºÅÍ´Â Player¸¦ °ø°ÝÇÏ°í, ÇÃ·¹ÀÌ¾î´Â ¸ó½ºÅÍ¸¦ °ø°ÝÇÕ´Ï´Ù.
-* ÇÃ·¹ÀÌ¾î´Â ´Ð³×ÀÓÀ» ÀÔ·ÂÇÏ°í, ¿øÇÏ´Â Á÷¾÷À» ¼±ÅÃÇÏ¿© °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.
-* ¸ó½ºÅÍ¿ÍÀÇ ÀüÅõ´Â ÇÃ·¹ÀÌ¾îÀÇ HP°¡ 0ÀÌ µÉ ¶§±îÁö °è¼ÓµÇ¸ç,
-* °¢ ÀüÅõ ÈÄ ÇÃ·¹ÀÌ¾îÀÇ »óÅÂ°¡ Ãâ·ÂµË´Ï´Ù.
-* ¸ó½ºÅÍ´Â ÀÌ¸§, HP = 10, °ø°Ý·Â = 30, ¹æ¾î·Â = 10, ¼Óµµ = 10 µîÀÇ ¼Ó¼ºÀ» °¡Áö¸ç,
-* ÇÃ·¹ÀÌ¾î´Â Á÷¾÷¿¡ µû¶ó HP, MP, °ø°Ý·Â, ¹æ¾î·Â, Á¤È®µµ, ¼Óµµ µîÀÇ ¼Ó¼ºÀ» °¡Áý´Ï´Ù.
-* °¢ Á÷¾÷Àº °íÀ¯ÀÇ °ø°Ý ¹æ½ÄÀ» °¡Áö°í ÀÖÀ¸¸ç, ¸ó½ºÅÍ¿ÍÀÇ ÀüÅõ¿¡¼­ ½Â¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù.
-* °¢ Á÷¾÷ÀÇ °ø°Ý ¹æ½ÄÀº Player Å¬·¡½ºÀÇ `attack()` ÇÔ¼ö¸¦ ¿À¹ö¶óÀÌµåÇÏ¿© ±¸ÇöµË´Ï´Ù.
-* ¸ó½ºÅÍ´Â Player¸¦ °ø°ÝÇÏ°í, Player´Â ¸ó½ºÅÍ¸¦ °ø°ÝÇÏ´Â ¹æ½ÄÀ¸·Î ÀüÅõ°¡ ÁøÇàµË´Ï´Ù.
-* °¢ ÀüÅõ ÈÄ ÇÃ·¹ÀÌ¾îÀÇ »óÅÂ°¡ Ãâ·ÂµÇ¸ç, ¸ó½ºÅÍ°¡ Á×À¸¸é ´ÙÀ½ ¸ó½ºÅÍ·Î ³Ñ¾î°©´Ï´Ù.
-* ¸ó½ºÅÍ°¡ Á×À¸¸é ÇÃ·¹ÀÌ¾îÀÇ ½Â¸® ¸Þ½ÃÁö°¡ Ãâ·ÂµË´Ï´Ù.
-* ÀÌ ÇÁ·Î±×·¥Àº °´Ã¼ ÁöÇâ ÇÁ·Î±×·¡¹ÖÀÇ »ó¼Ó°ú ´ÙÇü¼ºÀ» È°¿ëÇÏ¿© ´Ù¾çÇÑ Á÷¾÷ÀÇ ÇÃ·¹ÀÌ¾î¿Í ¸ó½ºÅÍ °£ÀÇ ÀüÅõ¸¦ ±¸ÇöÇÕ´Ï´Ù.
+* í”„ë¡œê·¸ëž¨ ì„¤ëª…:
+* ì´ í”„ë¡œê·¸ëž¨ì€ ë‹¤ì–‘í•œ ì§ì—…ì„ ê°€ì§„ í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„°ì™€ ì „íˆ¬ë¥¼ ë²Œì´ëŠ” ê²Œìž„ìž…ë‹ˆë‹¤.
+* ê° ì§ì—…ì€ Player í´ëž˜ìŠ¤ë¥¼ ìƒì†ë°›ì•„ ê³ ìœ ì˜ ê³µê²© ë°©ì‹ì„ êµ¬í˜„í•˜ë©°,
+* ëª¬ìŠ¤í„°ëŠ” Playerë¥¼ ê³µê²©í•˜ê³ , í”Œë ˆì´ì–´ëŠ” ëª¬ìŠ¤í„°ë¥¼ ê³µê²©í•©ë‹ˆë‹¤.
+* í”Œë ˆì´ì–´ëŠ” ë‹‰ë„¤ìž„ì„ ìž…ë ¥í•˜ê³ , ì›í•˜ëŠ” ì§ì—…ì„ ì„ íƒí•˜ì—¬ ê²Œìž„ì„ ì‹œìž‘í•©ë‹ˆë‹¤.
+* ëª¬ìŠ¤í„°ì™€ì˜ ì „íˆ¬ëŠ” í”Œë ˆì´ì–´ì˜ HPê°€ 0ì´ ë  ë•Œê¹Œì§€ ê³„ì†ë˜ë©°,
+* ê° ì „íˆ¬ í›„ í”Œë ˆì´ì–´ì˜ ìƒíƒœê°€ ì¶œë ¥ë©ë‹ˆë‹¤.
+* ëª¬ìŠ¤í„°ëŠ” ì´ë¦„, HP = 10, ê³µê²©ë ¥ = 30, ë°©ì–´ë ¥ = 10, ì†ë„ = 10 ë“±ì˜ ì†ì„±ì„ ê°€ì§€ë©°,
+* í”Œë ˆì´ì–´ëŠ” ì§ì—…ì— ë”°ë¼ HP, MP, ê³µê²©ë ¥, ë°©ì–´ë ¥, ì •í™•ë„, ì†ë„ ë“±ì˜ ì†ì„±ì„ ê°€ì§‘ë‹ˆë‹¤.
+* ê° ì§ì—…ì€ ê³ ìœ ì˜ ê³µê²© ë°©ì‹ì„ ê°€ì§€ê³  ìžˆìœ¼ë©°, ëª¬ìŠ¤í„°ì™€ì˜ ì „íˆ¬ì—ì„œ ìŠ¹ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+* ê° ì§ì—…ì˜ ê³µê²© ë°©ì‹ì€ Player í´ëž˜ìŠ¤ì˜ `attack()` í•¨ìˆ˜ë¥¼ ì˜¤ë²„ë¼ì´ë“œí•˜ì—¬ êµ¬í˜„ë©ë‹ˆë‹¤.
+* ëª¬ìŠ¤í„°ëŠ” Playerë¥¼ ê³µê²©í•˜ê³ , PlayerëŠ” ëª¬ìŠ¤í„°ë¥¼ ê³µê²©í•˜ëŠ” ë°©ì‹ìœ¼ë¡œ ì „íˆ¬ê°€ ì§„í–‰ë©ë‹ˆë‹¤.
+* ê° ì „íˆ¬ í›„ í”Œë ˆì´ì–´ì˜ ìƒíƒœê°€ ì¶œë ¥ë˜ë©°, ëª¬ìŠ¤í„°ê°€ ì£½ìœ¼ë©´ ë‹¤ìŒ ëª¬ìŠ¤í„°ë¡œ ë„˜ì–´ê°‘ë‹ˆë‹¤.
+* ëª¬ìŠ¤í„°ê°€ ì£½ìœ¼ë©´ í”Œë ˆì´ì–´ì˜ ìŠ¹ë¦¬ ë©”ì‹œì§€ê°€ ì¶œë ¥ë©ë‹ˆë‹¤.
+* ì´ í”„ë¡œê·¸ëž¨ì€ ê°ì²´ ì§€í–¥ í”„ë¡œê·¸ëž˜ë°ì˜ ìƒì†ê³¼ ë‹¤í˜•ì„±ì„ í™œìš©í•˜ì—¬ ë‹¤ì–‘í•œ ì§ì—…ì˜ í”Œë ˆì´ì–´ì™€ ëª¬ìŠ¤í„° ê°„ì˜ ì „íˆ¬ë¥¼ êµ¬í˜„í•©ë‹ˆë‹¤.
 ***********************************************************************************************************************/

@@ -1,13 +1,13 @@
-#pragma once
+ï»¿#pragma once
 #include "Player.h"
 
 // Archer.h
 class Archer : public Player {
 public:
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	Archer(string nickname);
 
-	//void attack() override;// °ø°İ ÇÔ¼ö ÀçÁ¤ÀÇ
-	// °ø°İ ÇÔ¼ö ÀçÁ¤ÀÇ
-	void attack(Monster* monster) override;
+	//void attack() override;// ê³µê²© í•¨ìˆ˜ ì¬ì •ì˜
+	// ê³µê²© í•¨ìˆ˜ ì¬ì •ì˜
+	void attack(Monster& monster) override;
 };

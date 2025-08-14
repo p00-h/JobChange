@@ -1,48 +1,68 @@
-#include "Monster.h"
+ï»¿#include "Monster.h"
 
-// Monster Å¬·¡½º »ı¼ºÀÚ
+// Monster í´ë˜ìŠ¤ ìƒì„±ì
 Monster::Monster(string name) : name(name),
 	HP(10),
 	power(30),
 	defence(10),
 	speed(10) {}
 
-void Monster::attack(Player* player) {
-	int damege = power - player->getDefence(); // ¸ó½ºÅÍÀÇ °ø°İ·Â - ÇÃ·¹ÀÌ¾îÀÇ ¹æ¾î·Â
+//void Monster::attack(Player* player) {
+//	int damege = power - player->getDefence(); // ëª¬ìŠ¤í„°ì˜ ê³µê²©ë ¥ - í”Œë ˆì´ì–´ì˜ ë°©ì–´ë ¥
+//	if (damege <= 0) {
+//		damege = 1; // ë°ë¯¸ì§€ê°€ 0 ì´í•˜ì¼ ê²½ìš° 1ë¡œ ì •ì˜
+//	}
+//	// ê³µê²© ë¬¸ì¥ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+//	cout << name << "ì´(ê°€) " << player->getNickname() << "ì—ê²Œ " << damege << "ì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤." << endl;
+//	
+//	// í”Œë ˆì´ì–´ì˜ HPì—ì„œ ë°ë¯¸ì§€ë¥¼ ë¹¼ê³ , setHPë¥¼ í˜¸ì¶œí•˜ì—¬ ìƒì¡´ ì—¬ë¶€ë¥¼ í™•ì¸í•©ë‹ˆë‹¤.
+//	bool isAlive = player->setHP(player->getHP() - damege);
+//	// ìƒì¡´ ì—¬ë¶€ì— ë”°ë¼ ë¶„ê¸°ë¬¸ì„ ì‹¤í–‰í•©ë‹ˆë‹¤.
+//	if (isAlive == 1) {
+//		std::cout << player->getNickname() << "ì˜ HPê°€ " << player->getHP() << " ë‚¨ì•˜ìŠµë‹ˆë‹¤." << std::endl;
+//	}
+//	else {
+//		std::cout << player->getNickname() << "ì˜ HPê°€ " << player->getHP() << " ë‚¨ì•˜ìŠµë‹ˆë‹¤." << std::endl;
+//		std::cout << name << "ì´(ê°€) ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤!" << std::endl;
+//	}
+//}
+
+void Monster::attack(Player& player) {
+	int damege = power - player.getDefence(); // ëª¬ìŠ¤í„°ì˜ ê³µê²©ë ¥ - í”Œë ˆì´ì–´ì˜ ë°©ì–´ë ¥
 	if (damege <= 0) {
-		damege = 1; // µ¥¹ÌÁö°¡ 0 ÀÌÇÏÀÏ °æ¿ì 1·Î Á¤ÀÇ
+		damege = 1; // ë°ë¯¸ì§€ê°€ 0 ì´í•˜ì¼ ê²½ìš° 1ë¡œ ì •ì˜
 	}
-	// °ø°İ ¹®ÀåÀ» Ãâ·ÂÇÕ´Ï´Ù.
-	cout << name << "ÀÌ(°¡) " << player->getNickname() << "¿¡°Ô " << damege << "ÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù." << endl;
-	
-	// ÇÃ·¹ÀÌ¾îÀÇ HP¿¡¼­ µ¥¹ÌÁö¸¦ »©°í, setHP¸¦ È£ÃâÇÏ¿© »ıÁ¸ ¿©ºÎ¸¦ È®ÀÎÇÕ´Ï´Ù.
-	bool isAlive = player->setHP(player->getHP() - damege);
-	// »ıÁ¸ ¿©ºÎ¿¡ µû¶ó ºĞ±â¹®À» ½ÇÇàÇÕ´Ï´Ù.
+	// ê³µê²© ë¬¸ì¥ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+	cout << name << "ì´(ê°€) " << player.getNickname() << "ì—ê²Œ " << damege << "ì˜ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤." << endl;
+
+	// í”Œë ˆì´ì–´ì˜ HPì—ì„œ ë°ë¯¸ì§€ë¥¼ ë¹¼ê³ , setHPë¥¼ í˜¸ì¶œí•˜ì—¬ ìƒì¡´ ì—¬ë¶€ë¥¼ í™•ì¸í•©ë‹ˆë‹¤.
+	bool isAlive = player.setHP(player.getHP() - damege);
+	// ìƒì¡´ ì—¬ë¶€ì— ë”°ë¼ ë¶„ê¸°ë¬¸ì„ ì‹¤í–‰í•©ë‹ˆë‹¤.
 	if (isAlive == 1) {
-		std::cout << player->getNickname() << "ÀÇ HP°¡ " << player->getHP() << " ³²¾Ò½À´Ï´Ù." << std::endl;
+		std::cout << player.getNickname() << "ì˜ HPê°€ " << player.getHP() << " ë‚¨ì•˜ìŠµë‹ˆë‹¤." << std::endl;
 	}
 	else {
-		std::cout << player->getNickname() << "ÀÇ HP°¡ " << player->getHP() << " ³²¾Ò½À´Ï´Ù." << std::endl;
-		std::cout << name << "ÀÌ(°¡) ½Â¸®Çß½À´Ï´Ù!" << std::endl;
+		std::cout << player.getNickname() << "ì˜ HPê°€ " << player.getHP() << " ë‚¨ì•˜ìŠµë‹ˆë‹¤." << std::endl;
+		std::cout << name << "ì´(ê°€) ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤!" << std::endl;
 	}
 }
 
-// ¸ó½ºÅÍÀÇ ¼Ó¼º°ªÀ» ¸®ÅÏÇÏ´Â get ÇÔ¼öµé
+// ëª¬ìŠ¤í„°ì˜ ì†ì„±ê°’ì„ ë¦¬í„´í•˜ëŠ” get í•¨ìˆ˜ë“¤
 string Monster::getName() { return name; }
 int Monster::getHP() { return HP; }
 int Monster::getPower() { return power; }
 int Monster::getDefence() { return defence; }
 int Monster::getSpeed() { return speed; }
 
-// ¸ó½ºÅÍÀÇ ¼Ó¼º°ªÀ» Á¤ÀÇÇÏ´Â set ÇÔ¼öµé
+// ëª¬ìŠ¤í„°ì˜ ì†ì„±ê°’ì„ ì •ì˜í•˜ëŠ” set í•¨ìˆ˜ë“¤
 void Monster::setName(string name) { this->name = name; }
 bool Monster::setHP(int HP) {
 	if (HP <= 0) {
-		this->HP = 0; // HP°¡ 0 ÀÌÇÏÀÏ °æ¿ì 0À¸·Î ¼³Á¤
-		return false; // HP°¡ 0 ÀÌÇÏÀÏ °æ¿ì false ¸®ÅÏ
+		this->HP = 0; // HPê°€ 0 ì´í•˜ì¼ ê²½ìš° 0ìœ¼ë¡œ ì„¤ì •
+		return false; // HPê°€ 0 ì´í•˜ì¼ ê²½ìš° false ë¦¬í„´
 	}
-	this->HP = HP; // »õ·Î¿î HP°ª Á¤ÀÇ
-	return true; // »ıÁ¸ »óÅÂÀÌ¹Ç·Î true ¸®ÅÏ
+	this->HP = HP; // ìƒˆë¡œìš´ HPê°’ ì •ì˜
+	return true; // ìƒì¡´ ìƒíƒœì´ë¯€ë¡œ true ë¦¬í„´
 }
 void Monster::setPower(int power) { this->power = power; }
 void Monster::setDefence(int defence) { this->defence = defence; }
