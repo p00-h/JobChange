@@ -4,6 +4,9 @@
 
 using namespace std;
 
+class Monster; // 전방 선언
+
+// Player 클래스 정의
 class Player {
 public:
 	// 생성자
@@ -12,7 +15,9 @@ public:
 	virtual ~Player() = default;
 
 	// 순수 가상 함수
-    virtual void attack() = 0;
+    //virtual void attack() = 0;
+	// 몬스터를 공격하는 함수
+	virtual void attack(Monster* monster) = 0;
 	// 플레이어 상태 출력 함수
     void printPlayerStatus();
 

@@ -40,14 +40,16 @@ int Player::getSpeed() {    return speed;}
 // setter 함수들
 void Player::setNickname(string nickname) {    this->nickname = nickname;}
 bool Player::setHP(int HP) {
-    if (HP < 0) {
+    if (HP <= 0) {
+		this->HP = 0; // HP가 0 이하일 경우 0으로 설정
         return false;
     }
     this->HP = HP;
     return true;
 }    
 bool Player::setMP(int MP) {
-    if (MP < 0) {
+    if (MP <= 0) {
+		this->MP = 0; // MP가 0 이하일 경우 0으로 설정
 		return false;
     }
 	this->MP = MP;
