@@ -1,24 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Cpp_Stu_Project\\JobChange2\\",
+  "WorkspaceRootPath": "E:\\git\\JobChange\\JobChange\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\Cpp_Stu_Project\\JobChange2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\git\\JobChange\\JobChange\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\Cpp_Stu_Project\\JobChange2\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\git\\JobChange\\JobChange\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|solutionrelative:Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\Cpp_Stu_Project\\JobChange2\\Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\git\\JobChange\\JobChange\\Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|solutionrelative:Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\Cpp_Stu_Project\\JobChange2\\Thief.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|E:\\git\\JobChange\\JobChange\\Thief.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{571DD89C-FF24-4F17-BFBC-5B775D8FE443}|JobChange.vcxproj|solutionrelative:Thief.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -35,11 +35,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "E:\\Cpp_Stu_Project\\JobChange2\\main.cpp",
+              "DocumentMoniker": "E:\\git\\JobChange\\JobChange\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "E:\\Cpp_Stu_Project\\JobChange2\\main.cpp",
+              "ToolTip": "E:\\git\\JobChange\\JobChange\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHIAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHIAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-12T11:05:57.894Z",
               "IsPinned": true,
@@ -49,14 +49,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Monster.cpp",
-              "DocumentMoniker": "E:\\Cpp_Stu_Project\\JobChange2\\Monster.cpp",
+              "DocumentMoniker": "E:\\git\\JobChange\\JobChange\\Monster.cpp",
               "RelativeDocumentMoniker": "Monster.cpp",
-              "ToolTip": "E:\\Cpp_Stu_Project\\JobChange2\\Monster.cpp",
+              "ToolTip": "E:\\git\\JobChange\\JobChange\\Monster.cpp",
               "RelativeToolTip": "Monster.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-14T03:32:03.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T03:32:03.232Z"
             },
             {
               "$type": "Document",
@@ -66,34 +65,31 @@
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring",
               "ViewState": "AgIAAPgBAAAAAAAAAAAvwBICAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-14T03:12:34.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T03:12:34.38Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Archer.cpp",
-              "DocumentMoniker": "E:\\Cpp_Stu_Project\\JobChange2\\Archer.cpp",
+              "DocumentMoniker": "E:\\git\\JobChange\\JobChange\\Archer.cpp",
               "RelativeDocumentMoniker": "Archer.cpp",
-              "ToolTip": "E:\\Cpp_Stu_Project\\JobChange2\\Archer.cpp",
+              "ToolTip": "E:\\git\\JobChange\\JobChange\\Archer.cpp",
               "RelativeToolTip": "Archer.cpp",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAADAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-13T11:10:46.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T11:10:46.108Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Thief.cpp",
-              "DocumentMoniker": "E:\\Cpp_Stu_Project\\JobChange2\\Thief.cpp",
+              "DocumentMoniker": "E:\\git\\JobChange\\JobChange\\Thief.cpp",
               "RelativeDocumentMoniker": "Thief.cpp",
-              "ToolTip": "E:\\Cpp_Stu_Project\\JobChange2\\Thief.cpp",
+              "ToolTip": "E:\\git\\JobChange\\JobChange\\Thief.cpp",
               "RelativeToolTip": "Thief.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-13T11:11:45.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T11:11:45.971Z"
             }
           ]
         }
